@@ -1,9 +1,13 @@
-///comment
+///Ryan Judge
+// 1 September 2014
+//Welcome Class Java Program
 
+//define a class
  public class HelloClass{
-     
+     //add main method
      public static void main(String[] args) {
     
+    //print statement
      System.out.println("------------");
      System.out.println("| WELCOME |"); 
      System.out.println("------------");
