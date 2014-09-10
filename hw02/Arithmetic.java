@@ -38,6 +38,7 @@ public class Arithmetic{
       double totalCostnotax$;
       double totalCostwithtax$;
       double totaltaxcost$;
+  
     
       
       //Arithmetic
@@ -58,14 +59,33 @@ public class Arithmetic{
       totalCostwithtax$=totalCostnotax$+totaltaxcost$; //total cost w/ tax
       totaltaxcost$=totalsocktax$+totalglasstax$+totalenvelopetax$; //combined tax
       
+      
+      
       //Displying results
+      
+            totalsockCost$ = Math.round(totalsockCost$*100.0)/100.0;
+            totalsocktax$ = Math.round(totalsocktax$*100.0)/100.0;
+            totalsockcosttax$ = Math.round(totalsockcosttax$*100.0)/100.0;
+            
+            totalglassCost$ = Math.round(totalglassCost$*100.0)/100.0;
+            totalglasstax$ = Math.round(totalglasstax$*100.0)/100.0;
+            totalglasscosttax$ = Math.round(totalglasscosttax$*100.0)/100.0;
+            
+            totalenvelopeCost$ = Math.round(totalenvelopeCost$*100.0)/100.0;
+            totalenvelopetax$ = Math.round(totalenvelopetax$*100.0)/100.0;
+            totalenvelopecosttax$ = Math.round(totalenvelopecosttax$*100.0)/100;
+            
+            totalCostnotax$ = Math.round(totalCostnotax$*100.0)/100.0;
+            totalCostwithtax$ = Math.round(totalCostwithtax$*100.0)/100.0;
+           
+            totaltaxcost$ = Math.round(totaltaxcost$*100.0)/100.0;
       
       System.out.println("Total cost of socks without taxis " + totalsockCost$);
       System.out.println("Total tax on socks is " + totalsocktax$);
       System.out.println("Total cost of socks with tax is " +totalsockcosttax$);
       
       System.out.println("Total cost of glasses without tax is " + totalglassCost$);
-      System.out.println("Total tax on glasses is " + totalglassCost$);
+      System.out.println("Total tax on glasses is " + totalglasstax$);
       System.out.println("Total cost of glasses with tax is " + totalglasscosttax$);
       
       System.out.println("Total cost of envelopes without tax is " +totalenvelopeCost$);
@@ -76,6 +96,7 @@ public class Arithmetic{
       System.out.println("Total cost of everything without tax is " +totalCostnotax$);
       System.out.println("Total cost of everything with tax is " +totalCostwithtax$);
         
+      
     
     }
         }
