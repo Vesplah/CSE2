@@ -16,11 +16,13 @@ public class Root { //define a class
 System.out.print("Enter a double and I print the cube root: ");// ask for user input
     double guess = myScanner.nextDouble();
 
+double root = +Math.pow(guess,.3333);
 
 //I used a different method of finding the cube root
     
-System.out.println("The cube root is: " +Math.pow(guess,.3333)); 
-System.out.println("The answer when cubed is: " +Math.cbrt(guess)*Math.cbrt(guess)*Math.cbrt(guess));
+System.out.println("The cube root is: " +root); 
+System.out.println((root) "*" (root) "*" (root) "=" +Math.cbrt(guess)*Math.cbrt(guess)*Math.cbrt(guess));
+
       
     }
 }
