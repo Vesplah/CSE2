@@ -27,13 +27,13 @@ double costFries = 2.15;
 System.out.print("Enter number of Big Macs: ");//ask for number of Big Macs
 boolean booBigMac = myScanner.hasNextInt();
 
+
 if (booBigMac==true){
     int numBigMacs = myScanner.nextInt();
     double CostBigMacs = Math.round(numBigMacs * 2.22 *100.0)/100.0; 
-
     System.out.println("You ordered " +numBigMacs+ " Big Macs for a cost of $" +CostBigMacs);
-                    
-
+    
+  
 
 System.out.print("Would you like fries with that? (Y/y/N/n) ");
 String answer = myScanner.next();
