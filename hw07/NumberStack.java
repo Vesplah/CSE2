@@ -17,6 +17,7 @@ public class NumberStack{//begin class
 System.out.println("Enter an integer ");
 boolean boo = myScanner.hasNextInt();
 int number = myScanner.nextInt();
+//all of the variables
 int x;
 int i;
 int j;
@@ -24,21 +25,21 @@ int k;
 int l;
 int m;
 
-if (boo ==true){
-    if (number >=1 && number <=9){
-    for (x=1; x<=number; x++){
+if (boo ==true){//determine if the input is a int
+    if (number >=1 && number <=9){// int between 1 and 9
+    for (x=1; x<=number; x++){///counter for loop
    
-        String dashes = "";
+        String dashes = "";//being the strings blank
         String spaces = "";
 
-       for(i=1; i<=((x*2)-1);i++){
+       for(i=1; i<=((x*2)-1);i++){//get number of dashes
            dashes += "-";
        }
        for(j=0; j<number; j++){
-           spaces += " ";
+           spaces += " "; //max number of spaces
        }
        for(k=1; k<x; k++){
-           spaces = spaces.substring(0, spaces.length()-1); 
+           spaces = spaces.substring(0, spaces.length()-1);  //remove spaces as neccesary
        }
        for (l=0; l<x; l++){
            System.out.print(spaces);
@@ -62,14 +63,14 @@ if (boo ==true){
 
             
             
- 
+ //counter
     x=1;
     
     while (x <=number){
         String dashes = "";
         String spaces = "";
         
-    
+    //variables
     i=1;
     j=0;
     k=1;
@@ -78,15 +79,15 @@ if (boo ==true){
         
         while (i<=((x*2)-1)){
             dashes += "-";
-            i++;
+            i++;//all dashes
         }
         while (j<number){
-            spaces += " ";
+            spaces += " ";''//max spaces
             j++;
         }
         while (k<=x){
             spaces = spaces.substring(0, spaces.length()-1);
-            k++; 
+            k++; //subtract some spaces as it runs
         }
         while (l<x){
             l++;
@@ -97,7 +98,7 @@ if (boo ==true){
                 System.out.print(x);
                 
             }
-               System.out.print("\n"); 
+               System.out.print("\n"); //start a new line
         }
          System.out.print(" "+spaces +dashes+ "\n");
            x++;
@@ -113,35 +114,35 @@ if (boo ==true){
 
     
     do { 
-        String dashes = "";
+        String dashes = "";//being string blank
         String spaces = "";
-        
+        //all the variables
         i=1;
         j=0;
         k=1;
         l=0;
         
          do {dashes += "-";
-            i++;
+            i++; //dash number
          } while (i<=((x*2)-1));
          do {spaces += " ";
-            j++;
+            j++;//number of spaces max
          } while (j<number);
          do { spaces = spaces.substring(0, spaces.length()-1);
-            k++; 
+            k++; //subtract some spaces
          } while (k<=x);
          do { 
-            System.out.print(spaces +" ");
+            System.out.print(spaces +" ");//allign properly
             l++;
-            m=0;
+            m=0;//cannot be reset to function properly
             do {m++;
                 System.out.print(x);
             } while (m<((x*2)-1));
             System.out.print("\n");
          } while (l<x);
-     System.out.print(" "+ spaces +dashes+ "\n");
+     System.out.print(" "+ spaces +dashes+ "\n"); //ensires a new line starts
            x++;
-    }while (x<=number);      
+    }while (x<=number);      //boundary
         
 }
 else {
@@ -151,6 +152,6 @@ else {
 else {
     System.out.println("Not an acceptable integer");
             }
-}
+}//end  main method
 
-}
+}//end class
