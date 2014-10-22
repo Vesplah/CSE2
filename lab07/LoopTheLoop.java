@@ -27,6 +27,6 @@ public class LoopTheLoop {
                     nStars = stringStar;
                     }
             }
-            System.out.println(" ");
+            
     }
 }
