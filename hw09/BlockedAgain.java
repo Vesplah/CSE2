@@ -114,7 +114,7 @@ public static void allBlocks(int m)
         dashes = block(m, counter);
         String spaces = line(m, counter);
         counter++;
-        System.out.print(spaces +dashes +"\n");
+        System.out.print(spaces +dashes);
     }
     
 
