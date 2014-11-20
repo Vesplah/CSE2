@@ -1,52 +1,42 @@
-//javac HelloWorld.java
-////
-//java HelloWorld//
-/////
-  public class HelloWorld{
-    
-    public static void main(String[] args) {
-     System.out.println("##########################");
-     System.out.println("##########################");
-     System.out.println("#                        #");
-     System.out.println("#     Hello World 2014   #");
-     System.out.println("#                        #");
-     System.out.println("##########################");
-     System.out.println("##########################");
-     System.out.println("testing");
-     
-          
-  
-//showHands();
-simulateOdds();
-}
-/*public static void showHands()
+//Ryan Judge
+
+//November 18
+
+//hw10 program 2
+
+//This program is designed to help us practice with arrays
+
+//given code
+import java.util.Random;
+import java.util.Scanner;
+public class PokerOdds{
+  public static void main(String [] arg){
+    showHands();
+    simulateOdds();
+  }
+//first method
+public static void showHands()
 {
     
     
-    int[] deck = new int[52];
-    String[] suits = {"Clubs" , "Diamonds", "Hearts" , "Spades"};
-    String[] ranks = {"Ace" , "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    int[] deck = new int[52]; //deck of 52
+    String[] suits = {"Clubs" , "Diamonds", "Hearts" , "Spades"}; //suits in a new array
+    String[] ranks = {"Ace" , "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"}; //rank in new array
 
 for (int i =0; i < deck.length; i++)
    { deck[i]=i;
 }
-for (int i = 0; i < deck.length; i++)
+for (int i = 0; i < deck.length; i++)//randomize the deck
 {
     int index = (int)(Math.random() * deck.length);
     int x = deck[i];
     deck[i] = deck[index];
     deck[index] = x;
 }
-String rank ="";
-String suit ="";
-for (int i =0; i<5; i++)
-{
-    suit = suits[deck[i] / 13];
-    rank = ranks[deck[i] % 13];
-    
-}
-    System.out.print("Clubs:");
-        if (suits[deck[0] /13] == "Clubs")
+
+
+    System.out.print("Clubs:"); //checking for clubs
+        if (suits[deck[0] /13] == "Clubs") // if the card in hand is a club, prints the value of the card
      {
          System.out.print(" "+ranks[deck[0] %13]);
      }
@@ -69,7 +59,7 @@ for (int i =0; i<5; i++)
     
      System.out.print("\n");
      System.out.print("Diamonds:");
-        if (suits[deck[0] /13] == "Diamonds")
+        if (suits[deck[0] /13] == "Diamonds")// if the card in hand is a diamond, prints the value of the card
      {
          System.out.print(" "+ranks[deck[0] %13]);
      }
@@ -91,7 +81,7 @@ for (int i =0; i<5; i++)
         }   
      System.out.print("\n");
      System.out.print("Hearts:");
-        if (suits[deck[0] /13] == "Hearts")
+        if (suits[deck[0] /13] == "Hearts")// if the card in hand is a heart, prints the value of the card
      {
          System.out.print(" "+ranks[deck[0] %13]);
      }
@@ -113,7 +103,7 @@ for (int i =0; i<5; i++)
         }   
      System.out.print("\n");
      System.out.print("Spades:");
-        if (suits[deck[0] /13] == "Spades")
+        if (suits[deck[0] /13] == "Spades")// if the card in hand is a spade, prints the value of the card
      {
          System.out.print(" "+ranks[deck[0] %13]);
      }
@@ -133,16 +123,17 @@ for (int i =0; i<5; i++)
         {
             System.out.print(" " +ranks[deck[4] %13]);
         }   
-     System.out.print("\n")
+     System.out.print("\n");
     
 }    
-*/
+    
    
     
 
-
+//second method that was called
 public static void simulateOdds()
 {
+    //varibales to be used later when counting
     int test =12;
     int ace = 0;
     int two=0;
@@ -158,41 +149,29 @@ public static void simulateOdds()
     int queen =0;
     int king =0;
 
-for (int g =0; g<=10000; g++)
+for (int g =0; g<=10000; g++) //repeat 10000 times
 {
-    int[] deck = new int[52];
-    String[] suits = {"Clubs" , "Diamonds", "Hearts" , "Spades"};
-    String[] ranks = {"Ace" , "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    int[] deck = new int[52]; //52 cards
+    String[] suits = {"Clubs" , "Diamonds", "Hearts" , "Spades"};//naming the suits
+    String[] ranks = {"Ace" , "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"}; //array for the ranks
 
 for (int i =0; i < deck.length; i++)
    { deck[i]=i;
 }
 
-for (int i = 0; i < deck.length; i++)
+for (int i = 0; i < deck.length; i++) //randomize deck
 {
     int index = (int)(Math.random() * deck.length);
     int x = deck[i];
     deck[i] = deck[index];
     deck[index] = x;
 }
-String rank ="";
-String suit ="";
 
 
-    
 
-   
-for (int i =0; i<5; i++)
-{
-suit = suits[deck[i] / 13];
-rank = ranks[deck[i] % 13];
-    
-}
-
-
-    for (int i = 0; i<=5; i++){
-        if (deck[i]%13 == deck[i+1]%13) {
-            if (deck[1]%13 == 1)
+    for (int i = 0; i<=5; i++){// 5 cards are drawn
+        if (deck[i]%13 == deck[i+1]%13) //check if two cards match {
+            if (deck[1]%13 == 1) //adds counter to the respective rank if they match
             {
                 ace++;
             }
@@ -228,7 +207,7 @@ rank = ranks[deck[i] % 13];
             if (deck[i]%13 ==12){
                 queen++;
             }
-            if (deck[i]%13 ==13){
+            if (deck[i]%13 ==0){
                 king++;
             }
                 
@@ -243,31 +222,7 @@ rank = ranks[deck[i] % 13];
         
         
     
-       /* if ((deck[i] % 13) == 2 && (deck[i-1] % 13) ==2 ){
-        two++;}
-        if ((deck[i] % 13) == 3 && (deck[i-1] % 13) ==3 ){
-        three++;}
-         if ((deck[i] % 13) == 4 && (deck[i-1] % 13) ==4 ){
-        four++;}
-         if ((deck[i] % 13) == 5 && (deck[i-1] % 13) ==5 ){
-        five++;}
-         if ((deck[i] % 13) == 6 && (deck[i-1] % 13) ==6 ){
-        six++;}
-         if ((deck[i] % 13) == 7 && (deck[i-1] % 13) ==7 ){
-        seven++;}
-         if ((deck[i] % 13) == 8 && (deck[i-1] % 13) ==8 ){
-        eight++;}
-         if ((deck[i] % 13) == 9 && (deck[i-1] % 13) ==9 ){
-        nine++;}
-         if ((deck[i] % 13) == 10 && (deck[i-1] % 13) ==10 ){
-        ten++;}
-         if ((deck[i] % 13) == 11 && (deck[i-1] % 13) ==11){
-        jack++;}
-         if ((deck[i] % 13) == 12 && (deck[i-1] % 13) ==12 ){
-        queen++;}
-         if ((deck[i] % 13) == 13 && (deck[i-1] % 13) ==13 ){
-        test++;}
-        */
+     
         
         
 } 
@@ -289,11 +244,8 @@ rank = ranks[deck[i] % 13];
     System.out.println("Kings: " +king);
     System.out.println("-------------");
     System.out.println("total not exactly one pair: "+(10000 - (ace+two+three+four+five+six+seven+eight+nine+ten+jack+queen+king)));
-
-
-}
-
+    //10000 - total matches is total not matched
 
 }
-
+}
 
