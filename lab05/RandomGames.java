@@ -7,65 +7,99 @@
 //This lab is designed to have use practice switch statments and generate random numbers
 
 
+//import scanner
 import java.util.Scanner;
-
-
-public class RandomGames { //defiine a class
-
-    public static void main(String[] args) { //start main method
+//create class
+public class RandomGames    {
+    //add main method
+    public static void main(String[] args)   {
+        //call scanner constructor 
+        Scanner myScanner;
+        myScanner=new Scanner(System.in);   //create instance of scanner
+        int roll1;  //declare variable
+        int roll2;  //declare variable
+        int roll;   //declare variable
+        int spin;   //declare variable
+        int randSuit;   //declare variable
+        int cards;   //declare variable
+       
+        System.out.print("Enter R or r for Roulette, C or c for craps, and P or p for playing cards: ");  //prompt the user to input game desired
+        if (myScanner.hasNext())    {
+            String games=myScanner.next();
+            if (games.equals("A") || games.equals("a") || games.equals("B") || games.equals("b") || games.equals("K") || games.equals("k") || games.equals("D") || games.equals("d") || games.equals("E") || games.equals("e") || games.equals("F") || games.equals("f") || games.equals("G") || games.equals("g") || games.equals ("H")||  games.equals("h") || games.equals("I") || games.equals("i") || games.equals("J") || games.equals("j") || games.equals("L") || games.equals("l") || games.equals("M") || games.equals("m") || games.equals("N") || games.equals("n") || games.equals("O")  || games.equals("o") || games.equals("Q")  || games.equals("q") || games.equals("S") || games.equals("s") || games.equals("T") || games.equals("t") || games.equals("U") || games.equals("u")  || games.equals("V") || games.equals("v") || games.equals("W") || games.equals("w") || games.equals("x") || games.equals("X") || games.equals("Y") || games.equals("y")  || games.equals("Z") || games.equals("z"))    {
+                System.out.println("'"+games+"' is not one of 'R', 'r', 'C', 'c', 'P', or 'p'");
+            }
+            else if (games.equals("R") || games.equals("r"))  {
+                 //go up til 37, make if statement
+                //note: you want up to #36 but 00=37
+                spin=(int)((Math.random()*37));  //randomize numbers between 0 and 37
+                        if (spin==37)   {
+                            System.out.println("Roulette: 00"); //print this only if it should be 00
+                            return; //terminate program
+                        }
+                        else    {
+                            System.out.println("Roulette: "+spin);  //print the result of the spin
+                            return;
+                        }
+            }
+            else if (games.equals("C") || games.equals("c")) {
+                    //game play for craps
+                    //roll die twice, display and add results
+                    //want to randomize 6 numbers not including 0
+                    roll1=(int)(Math.random()*6+1); //randomize numbers between 1 and 6
+                    roll2=(int)(Math.random()*6+1); //do again
+                    roll=roll1+roll2;   //calculate addition of the two random rolls
+                    System.out.println(roll1+" + "+roll2+" = "+roll);   //print two rolls and addition
+                    return;
+            }
+            else if (games.equals("P") || games.equals("p")) {  
+                //game play for playing cards
+                //print out random card and its suit
+                 cards=(int)(Math.random()*13+1);    //randomize numbers from 1 to 13
+                        switch (cards)  {
+                            case 1: //1=ace
+                                System.out.print("Ace of "); //print out result of randomized suits and randomized card
+                                break;
+                            case 11: //11=jack
+                                System.out.print("Jack of ");    //print out result
+                                break;
+                            case 12:    //12=queen
+                                System.out.print("Queen of ");   //print out result
+                                break;
+                            case 13:    //13=king
+                                System.out.print("King of ");
+                                break;
+                            default:
+                                System.out.print(cards+" of "); //print when not a special case
+                                break;
+                        }
+                           randSuit=(int)(Math.random()*4+1);    //randomize numbers from 1 to 4
+                        switch (randSuit)  {
+                            case 1: //1=hearts
+                                System.out.print("Hearts");
+                                break;
+                            case 2: //2=spades
+                                //suit="spades";
+                                System.out.print("Spades");
+                                break;
+                            case 3: //3=diamonds
+                                System.out.print("Diamonds");
+                                break;
+                            case 4: //4=clubs
+                                System.out.print("Clubs");
+                                break;
+                        }
+            return;
+        }
+        else {
+            System.out.println("Error. You did not enter single character.");   //print statement
+            return;
+        }
+       
+        
+        
+    }   //end of main method
+  }
+ }//end of class
     
-    Scanner myScanner;
-
-    myScanner = new Scanner( System.in );
- 
-
-System.out.print("Enter (R) or (r) for Roulette, (C) or (c) for craps, (P) or (p) for pick a card: " );
-String Game = myScanner.next();
-int Length = Game.length();   
-
-if (Length == 1){
     
-    switch (Game) {
-        case "R":
-        case "r":
-            int Min = Math.min(00,37);
-            int Max = Math.max(00,37);
-            
-            int randomNum = Min+(int)(Math.random()*((Max-Min) + 1)); 
-                if (randomNum == 37){
-                double randomD = (double) randomNum;
-                String randomString = String.valueOf(randomD);
-                randomString = "00";
-                System.out.println("Roulette: " +randomString);
-                return;
-                }
-                else {}
-            
-            System.out.println("Roulette: " +randomNum);
-            break;
-        case "C":
-            System.out.println("Craps option not yet implmented");
-            break;
-        case "c":
-            System.out.println("Craps option not yet implmented");
-            break;
-        case "P":
-            System.out.println("Picking option not yet implemented");
-            break;
-        case "p":
-            System.out.println("Picking option not yet implemented");
-            break;
-        default:
-            System.out.println("Please eneter a valid selection");
-            break;
-    } 
-}    
-else {
-        System.out.println("A single character expected");
-}    
-    
-    
-    
-    
-    }//end main method
-}// end class

@@ -13,9 +13,31 @@
      System.out.println("##########################");
      System.out.println("##########################");
      System.out.println("testing");
+    }
+    
+    
+   
+    public static int linearSearch(int[] list, int key){
+        for (int i =0; i<list.length; i++){
+            if (key == list[i])
+            return i;
+        }
+        return -1;
+    }
+    
+    
+    
+    
+    
+  }
+  
+     
+     
+     
+     
      
           
-  
+/*  
 //showHands();
 simulateOdds();
 }
@@ -136,7 +158,7 @@ for (int i =0; i<5; i++)
      System.out.print("\n")
     
 }    
-*/
+
    
     
 
@@ -267,7 +289,7 @@ rank = ranks[deck[i] % 13];
         queen++;}
          if ((deck[i] % 13) == 13 && (deck[i-1] % 13) ==13 ){
         test++;}
-        */
+        
         
         
 } 
